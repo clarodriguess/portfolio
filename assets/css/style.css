@@ -74,7 +74,7 @@ body {
     line-height: 1.6;
     color: var(--black);
     background-image: linear-gradient(rgba(255, 253, 243, 0.806), rgba(255, 255, 255, 0.655)),
-        url("./assets/img/background.png");
+        url("../img/background.png");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -782,6 +782,20 @@ footer {
 
     .data-label {
         font-size: var(--text-sm);
+    }
+    .project-image{
+        height: 7rem;
+    }
+    .project-image img{
+        max-height: 5rem;
+        max-width: 5rem;
+    }
+    .project-content p {
+    font-size: 0.85rem;
+}
+    .project-buttons{
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     footer {
