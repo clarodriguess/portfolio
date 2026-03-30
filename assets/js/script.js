@@ -67,104 +67,113 @@ async function getProjectsGitHub() {
         //cores e icon das linguagens
         
         const linguagens = {
-            'JavaScript': { icone: 'javascript' },
-            'TypeScript': { icone: 'typescript' },
-            'Python': { icone: 'python' },
-            'Java': { icone: 'java' },
-            'HTML': { icone: 'html' },
-            'CSS': { icone: 'css' },
-            'PHP': { icone: 'php' },
-            'C#': { icone: 'csharp' },
-            'Go': { icone: 'go' },
-            'Kotlin': { icone: 'kotlin' },
-            'Swift': { icone: 'swift' },
-            'GitHub': { icone: 'github' },
+          	'JavaScript': 'javascript',
+			'TypeScript': 'typescript',
+			'Python': 'python',
+			'Java': 'java',
+			'HTML': 'html',
+			'CSS': 'css',
+			'PHP': 'php',
+			'C#': 'csharp',
+			'Go': 'go',
+			'Kotlin': 'kotlin',
+			'Swift': 'swift',
+			'C': 'c',
+			'C++': 'c_plus',
+			'GitHub': 'github',
         };
 
-        //guardar as infos do repo
-        repositorios.forEach(repositorio => {
+       repositorios.forEach((repositorio) => {
+			
+      // Seleciona o nome da Linguagem padrão do repositório
+      const linguagem = repositorio.language || 'GitHub'
+			
+      // Seleciona o ícone da Linguagem padrão do repositório
+      const icone = linguagens[linguagem] ?? linguagens['GitHub']
+			
+      // Constrói a URL que aponta para o ícone da Linguagem padrão do repositório
+      const urlIcone = `./assets/icons/languages/${icone}.svg`
 
-            // recebe a linguagem do repo, se tiver vazia usa GitHub
-            const linguagem = repositorio.language || 'GitHub'
+			// Formata o Nome do Repositório
+			const nomeFormatado = repositorio.name
+				.replace(/[-_]/g, ' ') // Substitui hifens e underlines por espaços em branco
+				.replace(/[^a-zA-Z0-9\s]/g, '') // Remove Caracteres especiais
+        .replace(/\s+t[a-z0-9]+$/i, '') // Remove a identificação de turma
+				.toUpperCase() // Converte a string em letras maiúsculas
 
-            //pega a linguagem e percorre o obj linguagens e guarda o icon, se nao encontrar guarda o do github
-            const config = 
-                linguagens[linguagem] || linguagens['GitHub']
+			// Função para truncar texto
+      // Se a descrição possuir mais de 100 carcateres
+      // seleciona os primeiros 97 e acrescenta '...' no final
+      // Senão retorna o mesmo texto
+			const truncar = (texto, limite) => texto.length > limite
+        ? texto.substring(0, limite) + '...'
+        : texto
 
-            //monta a url q aponta para o icon da linguagem
-            const urlIcone = `./assets/icons/languages/${config.icone}.svg`;
+      // Define a descrição do Repositório
+      const descricao = repositorio.description
+        ? truncar(repositorio.description, 100)
+        : 'Projeto desenvolvido no GitHub'
 
-            //nome do repo
-            const nomeFormatado = repositorio.name
-                .replace(/[-_]/g, ' ')
-                .replace(/[^a-zA-Z0-9\s]/g, '')
-                .toUpperCase();
+			// tags
+      const tags = repositorio.topics?.length > 0
+        ? repositorio.topics.slice(0, 3).map(topic => `<span class="tag">${topic}</span>`).join('')
+        : `<span class="tag">${linguagem}</span>`;
 
-            //para pegar so uma parte da description caso tenha mais de 100 caracteres
-            const descricao = repositorio.description 
-                ? repositorio.description.length > 100
-                    ? repositorio.description.substring(0, 97) + '...'
-                    : repositorio.description
-                // se nao tiver descricao 
-                : 'Projeto desenvolvido no GitHub';
+      // Cria o Botão Deploy
+      const botaoDeploy = repositorio.homepage
+        ? `<a href="${repositorio.homepage}" target="_blank" class="botao-outline botao-sm">Deploy</a>`
+        : ''
 
-            //tags do repositorio
-            //confere se é >0 - se for pega os 3 primeiros e multiplica o span - se nao tiver gera um span com github
-            const tags = 
-                repositorio.topics?.length > 0
-                    ? repositorio.topics
-                        .slice(0, 3)
-                        .map(
-                            (topic) => 
-                            `<span class="tag">${topic}</span>`,
-                        )
-                    .join('')
-                : `<span class="tag">${linguagem}</span>`;
+      // Botões de ação
+      const botoesAcao = `
+        <div class="project-buttons">
+          <a href="${repositorio.html_url}" target="_blank" class="botao botao-sm">
+            GitHub
+          </a>
+          ${botaoDeploy}
+        </div>
+      `;
 
-            //botoes acao
-            //se tiver deploy aparece o botao, se nao tiver nao aparece
-            const botoesAcao = `
-                <div class="project-buttons">
-                    <a href="${repositorio.html_url}" target="_blank" class="botao botao-sm">
-                    GitHub</a>
-        
-                    ${repositorio.homepage ? 
-                    `<a href="${repositorio.homepage}" target="_blank" class="botao-outline botao-sm">
-                    Deploy</a>`
-                    : ''}
+			// Constrói o Card
+			swiperWrapper.innerHTML += `
+      
+          <div class="swiper-slide">
+
+            <article class="project-card">
+
+              
+              <figure class="project-image">
+                <img src="${urlIcone}"
+                     alt="Ícone - ${linguagem} - Linguagem principal do projeto"
+                >
+              </figure>
+
+            
+              <div class="project-content">
+
+                <h3>${nomeFormatado}</h3>
+                <p>${descricao}</p>
+
+                <div class="project-tags">
+                  ${tags}
                 </div>
-            `
 
-        swiperWrapper.innerHTML += `
+                ${botoesAcao}
 
-            <div class="swiper-slide">
+              </div>
 
-                <article class="project-card">
+            </article>
 
-                    <figure class="project-image">
-                        <img src="${urlIcone}" alt="${linguagem}">
-                    </figure>
+          </div>
+      `
+		})
 
-                    <div class="project-content">
-                        <h3>${nomeFormatado}</h3>
-                        <p>${descricao}</p>
-
-                        <div class="project-tags">
-                            ${tags}
-                        </div>
-                        ${botoesAcao}
-
-                    </div>
-                </article>
-            </div>
-        `;
-    })
-    iniciarSwiper();
-
-    } catch (error) {
-        console.error('Erro ao buscar dados no GitHub', error);
-    }
+		iniciarSwiper()
+	} catch (error) {
+		console.error('Erro ao buscar dados no GitHub', error)
+	}
 }
+
 //SWIPPER - carrossel
 function iniciarSwiper() {
     new Swiper('.projects-swiper', {
