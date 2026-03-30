@@ -73,7 +73,7 @@ body {
     background-color: var(--bg);
     line-height: 1.6;
     color: var(--black);
-    background-image: linear-gradient(rgba(255, 253, 243, 0.806), rgba(255, 255, 255, 0.655)),
+    background-image: linear-gradient(rgba(255, 253, 243, 0.6), rgba(255, 255, 255, 0.6)),
         url("../img/background.png");
     background-size: cover;
     background-attachment: fixed;
