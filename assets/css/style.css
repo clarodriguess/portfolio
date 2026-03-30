@@ -70,11 +70,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* background-color: var(--main-color2); */
+    background-color: var(--bg);
     line-height: 1.6;
     color: var(--black);
     background-image: linear-gradient(rgba(255, 253, 243, 0.806), rgba(255, 255, 255, 0.655)),
-        url("/assets/img/background.png");
+        url("./assets/img/background.png");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
