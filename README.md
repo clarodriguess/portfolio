@@ -86,6 +86,6 @@ Tem algum projeto em mente ou quer trocar uma ideia? Me chama! 😊
 
 <div align="center">
 
-Desenvolvido com 💜 por **Clarisse Rodrigues**
+Desenvolvido por **Clarisse Rodrigues**
 
 </div>
