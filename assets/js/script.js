@@ -28,14 +28,14 @@ async function getAboutGitHub() {
             <article class="about-content">
                 <h2>Sobre mim</h2>
                 <p>Desenvolvedora Full Stack | JavaScript • TypeScript • Node.js • NestJS • React • Git • SQL</p>
-                <p>Antes de migrar para tecnologia, atuei por cerca de 10 anos com gestão e estruturação de processos. Essa experiência hoje influencia bastante a forma como desenvolvo: penso em organização, clareza de código e soluções que realmente façam sentido no uso real..</p>
+                <p>Antes de migrar para tecnologia, atuei por cerca de 10 anos com gestão e estruturação de processos. Essa experiência hoje influencia bastante a forma como desenvolvo: penso em organização, clareza de código e soluções que realmente façam sentido no uso real.</p>
                 <p>Atualmente curso Análise e Desenvolvimento de Sistemas e participo do bootcamp Full Stack JavaScript da Generation Brasil, aprofundando conhecimentos em desenvolvimento web, arquitetura de aplicações e boas práticas.</p>
 
                 <div class="about-buttons-data">
                     <div class="buttons-container">
                     <a href="https://www.linkedin.com/in/clarissee-rodriguess/" target="_blank" class="botao">Linkedin</a>
                         <a href="${perfil.html_url}"" target="_blank" class="botao">GitHub</a>
-                        <a href="https://drive.google.com/file/d/18UjOt9M97NDmEDcsV1ZSkA2JiyxkEPYu/view?usp=sharing" target="_blank" class="botao-outline">Curriculo</a>
+                        <a href="https://drive.google.com/file/d/1Fb5l1Kvk0JZ70vqtmbYx-qna8b2A7V5Q/view?usp=sharing" target="_blank" class="botao-outline">Curriculo</a>
                     </div>
                     <div class="data-container">
                         <div class="data-item">
