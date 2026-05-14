@@ -217,24 +217,23 @@ header a:hover {
 }
 
 .hero-content span {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-weight: 500;
     text-transform: uppercase;
     color: var(--gray-800);
 }
 
 .hero-content h1 {
-    font-family: "Anton SC", sans-serif;
+    font-family: "Shadows Into Light Two", cursive;
     color: var(--gray-800);
-    font-size: 3.5rem;
-    font-weight: 300;
-    text-shadow: 1px 1px 50px rgb(208, 241, 255);
+    font-size: 4.5rem;
+    text-shadow: 1px 1px 50px rgb(195, 223, 231);
 }
 
 .hero-content p,
 .about-content p,
 .contact-info p {
-    font-size: var(--text-lg);
+    font-size: 1rem;
     color: var(--gray-400);
 }
 
@@ -264,7 +263,7 @@ header a:hover {
     }
 
     50% {
-        transform: translateY(-0.7rem);
+        transform: translateY(-0.65rem);
     }
 }
 
@@ -487,6 +486,16 @@ header a:hover {
     grid-template-columns: 2fr 3fr;
     gap: var(--spacing-2xl);
 }
+.subtitle{
+    font-family: "Shadows Into Light Two", cursive;
+    color: var(--gray-800);
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 50px rgb(164, 202, 233);
+    margin: 15px 0 5px;
+}
+.contact-container h4{
+    font-size: var(--text-2xl);
+}
 
 /* Redes Sociais */
 .contact-info h2 {
@@ -500,12 +509,12 @@ header a:hover {
 .social-container {
     display: flex;
     /* justify-content: center; */
-    gap: var(--spacing-xl);
+    gap: var(--spacing-sm);
 }
 
 .social-icon {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     padding: 0.5rem;
     border-radius: var(--radius-md);
     transition: var(--transition-default);
@@ -567,7 +576,7 @@ form span {
 footer {
     padding: 6px;
     margin: 20px 0 0 0;
-    font-size: 15px;
+    font-size: 12px;
     background-color: var(--gray-800);
     font-weight: 300;
     text-align: center;
