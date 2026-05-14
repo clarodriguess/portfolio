@@ -33,6 +33,7 @@ async function getAboutGitHub() {
 
                 <div class="about-buttons-data">
                     <div class="buttons-container">
+                    <a href="https://www.linkedin.com/in/clarissee-rodriguess/" target="_blank" class="botao">Linkedin</a>
                         <a href="${perfil.html_url}"" target="_blank" class="botao">GitHub</a>
                         <a href="https://drive.google.com/file/d/18UjOt9M97NDmEDcsV1ZSkA2JiyxkEPYu/view?usp=sharing" target="_blank" class="botao-outline">Curriculo</a>
                     </div>
