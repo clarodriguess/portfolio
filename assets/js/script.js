@@ -27,9 +27,10 @@ async function getAboutGitHub() {
 
             <article class="about-content">
                 <h2>Sobre mim</h2>
-                <p>Desenvolvedora Full Stack | JavaScript • TypeScript • Node.js • NestJS • React • Git • SQL</p>
+                <p>Desenvolvedora Full Stack | Java • JavaScript • TypeScript • Node.js • NestJS • React • Git • SQL</p>
                 <p>Antes de migrar para tecnologia, atuei por cerca de 10 anos com gestão e estruturação de processos. Essa experiência hoje influencia bastante a forma como desenvolvo: penso em organização, clareza de código e soluções que realmente façam sentido no uso real.</p>
-                <p>Atualmente curso Análise e Desenvolvimento de Sistemas e participo do bootcamp Full Stack JavaScript da Generation Brasil, aprofundando conhecimentos em desenvolvimento web, arquitetura de aplicações e boas práticas.</p>
+                <p>Atualmente curso Análise e Desenvolvimento de Sistemas e concluí o bootcamp Full Stack JavaScript da Generation Brasil (420h), com foco em desenvolvimento web, arquitetura de APIs REST e boas práticas.</p>
+				<p>Também atuo como desenvolvedora backend Java voluntária na comunidade ProGirls, contribuindo com soluções reais em um ambiente colaborativo voltado para mulheres em tecnologia.</p>
 
                 <div class="about-buttons-data">
                     <div class="buttons-container">
